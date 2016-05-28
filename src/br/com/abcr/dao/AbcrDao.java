@@ -40,16 +40,20 @@ public class AbcrDao {
 
 	public List<Corredor> getLista() {
 		try {
-			List<Corredor> corredores = new ArrayList<Corredor>();
+			List<Corredor> corredores = new ArrayList<>();
 			PreparedStatement stmt = this.connection.prepareStatement("select * from corredor");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Corredor corredor = new Corredor();
 				corredor.setCpf(rs.getString("cpf"));
-				corredor.setEndereco(rs.getString("endereco"));
+				corredor.setNome(rs.getString("nome"));
 				Calendar data = Calendar.getInstance();
 				data.setTime(rs.getDate("dataNascimento"));
 				corredor.setDataNascimento(data);
+				corredor.setSexo(rs.getString("sexo"));
+				corredor.setTelefone(rs.getString("telefone"));
+				corredor.setEndereco(rs.getString("endereco"));
+				corredor.setPessoaContato(rs.getString("pessoaContato"));
 				corredores.add(corredor);
 			}
 			stmt.close();

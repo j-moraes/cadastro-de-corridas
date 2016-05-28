@@ -17,7 +17,7 @@ public class Corredor {
 	private String telefone;
 	private String endereco;
 	private String pessoaContato;
-
+	
 	/**
 	 * @return the nome
 	 */
