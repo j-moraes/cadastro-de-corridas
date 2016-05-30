@@ -3,7 +3,7 @@
  */
 package br.com.abcr.model;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * @author jmoraes
@@ -11,9 +11,9 @@ import java.util.Date;
  */
 public class Corrida {
 	private String id;
-	private Date dataRealizacao;
-	private Date start;
-	private Date end;
+	private Calendar dataRealizacao;
+	private Calendar start;
+	private Calendar end;
 	private String percurso;
 
 	/**
@@ -33,7 +33,7 @@ public class Corrida {
 	/**
 	 * @return the dataRealizacao
 	 */
-	public Date getDataRealizacao() {
+	public Calendar getDataRealizacao() {
 		return dataRealizacao;
 	}
 
@@ -41,14 +41,14 @@ public class Corrida {
 	 * @param dataRealizacao
 	 *            the dataRealizacao to set
 	 */
-	public void setDataRealizacao(Date dataRealizacao) {
+	public void setDataRealizacao(Calendar dataRealizacao) {
 		this.dataRealizacao = dataRealizacao;
 	}
 
 	/**
 	 * @return the horarioInicio
 	 */
-	public Date getStart() {
+	public Calendar getStart() {
 		return start;
 	}
 
@@ -56,14 +56,14 @@ public class Corrida {
 	 * @param horarioInicio
 	 *            the horarioInicio to set
 	 */
-	public void setStart(Date start) {
+	public void setStart(Calendar start) {
 		this.start = start;
 	}
 
 	/**
 	 * @return the horarioTermino
 	 */
-	public Date getEnd() {
+	public Calendar getEnd() {
 		return end;
 	}
 
@@ -71,7 +71,7 @@ public class Corrida {
 	 * @param horarioTermino
 	 *            the horarioTermino to set
 	 */
-	public void setEnd(Date end) {
+	public void setEnd(Calendar end) {
 		this.end = end;
 	}
 

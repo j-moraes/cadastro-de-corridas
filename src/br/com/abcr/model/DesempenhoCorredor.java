@@ -3,7 +3,7 @@
  */
 package br.com.abcr.model;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * @author jmoraes
@@ -12,7 +12,7 @@ import java.util.Date;
 public class DesempenhoCorredor {
 	private String idCorrida;
 	private String nome;
-	private Date tempoChegada;
+	private Calendar tempoChegada;
 	private String corridaCompleta;
 	private String corridaIncompleta;
 
@@ -49,7 +49,7 @@ public class DesempenhoCorredor {
 	/**
 	 * @return the tempoChegada
 	 */
-	public Date getTempoChegada() {
+	public Calendar getTempoChegada() {
 		return tempoChegada;
 	}
 
@@ -57,7 +57,7 @@ public class DesempenhoCorredor {
 	 * @param tempoChegada
 	 *            the tempoChegada to set
 	 */
-	public void setTempoChegada(Date tempoChegada) {
+	public void setTempoChegada(Calendar tempoChegada) {
 		this.tempoChegada = tempoChegada;
 	}
 

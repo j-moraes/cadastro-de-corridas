@@ -10,8 +10,10 @@ import java.util.Scanner;
 
 import br.com.abcr.dao.AcompanhamentoCorredorDao;
 import br.com.abcr.dao.CorredorDao;
+import br.com.abcr.dao.CorridaDao;
 import br.com.abcr.model.AcompanhamentoCorredor;
 import br.com.abcr.model.Corredor;
+import br.com.abcr.model.Corrida;
 
 /**
  * @author jmoraes
@@ -20,11 +22,15 @@ import br.com.abcr.model.Corredor;
 public class TestaInsere {
 	private static CorredorDao abcrDao;
 
+	private static CorridaDao corridaDao;
+
 	private static AcompanhamentoCorredorDao acompanhamentoDao;
 	private static Scanner pegaValor;
 	private static Corredor corredor;
 
 	private static AcompanhamentoCorredor acompanhamentoCorredor;
+
+	private static Corrida corrida;
 
 	/**
 	 * @param args
@@ -32,12 +38,16 @@ public class TestaInsere {
 	 */
 	public static void main(String[] args) throws ParseException {
 		corredor = new Corredor();
-		
+
 		acompanhamentoCorredor = new AcompanhamentoCorredor();
-		
+
+		corrida = new Corrida();
+
 		abcrDao = new CorredorDao();
-		
+
 		acompanhamentoDao = new AcompanhamentoCorredorDao();
+
+		corridaDao = new CorridaDao();
 
 		int op = 0;
 
@@ -62,6 +72,15 @@ public class TestaInsere {
 				break;
 
 			case 2:
+
+				cadastroDadosSaude();
+
+				break;
+
+			case 3:
+				cadastroCorrida();
+
+				break;
 
 			default:
 				break;
@@ -173,6 +192,55 @@ public class TestaInsere {
 		acompanhamentoCorredor.setBatimentosCardiacosRepouso(pegaValor.nextLine());
 
 		acompanhamentoDao.adiciona(acompanhamentoCorredor);
+
+		System.out.println("Dados salvos com sucesso!");
+	}
+
+	public static void cadastroCorrida() throws ParseException {
+		// pega id
+		System.out.print("ID : ");
+		pegaValor = new Scanner(System.in);
+		corrida.setId(pegaValor.nextLine());
+
+		// pega Data de Realização
+		System.out.print("Data de Realização : ");
+
+		pegaValor = new Scanner(System.in);
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(sdf.parse(pegaValor.nextLine()));
+
+		corrida.setDataRealizacao(cal);
+
+		// Horário de início.
+		System.out.print("Horário de início : ");
+		pegaValor = new Scanner(System.in);
+
+		new SimpleDateFormat("dd/MM/yyyy");
+		Calendar.getInstance();
+		cal.setTime(sdf.parse(pegaValor.nextLine()));
+
+		corrida.setStart(cal);
+
+		// Horário de encerramento
+
+		System.out.print("Horário de encerramento : ");
+		pegaValor = new Scanner(System.in);
+
+		new SimpleDateFormat("dd/MM/yyyy");
+		Calendar.getInstance();
+		cal.setTime(sdf.parse(pegaValor.nextLine()));
+
+		corrida.setEnd(cal);
+
+		// percurso
+		System.out.print("Percurso : ");
+		pegaValor = new Scanner(pegaValor.nextLine());
+
+		corrida.setPercurso(pegaValor.nextLine());
+
+		corridaDao.adiciona(corrida);
 
 		System.out.println("Dados salvos com sucesso!");
 	}
