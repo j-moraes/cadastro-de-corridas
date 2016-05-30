@@ -5,7 +5,7 @@ package br.com.abcr.main;
 
 import java.util.List;
 
-import br.com.abcr.dao.AbcrDao;
+import br.com.abcr.dao.CorredorDao;
 import br.com.abcr.model.Corredor;
 
 /**
@@ -18,7 +18,7 @@ public class TestaLista {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		AbcrDao dao = new AbcrDao();
+		CorredorDao dao = new CorredorDao();
 		List<Corredor> corredores = dao.getLista();
 		for (Corredor corredor : corredores) {
 			System.out.println("Nome:" + corredor.getNome());

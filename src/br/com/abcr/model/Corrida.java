@@ -10,10 +10,25 @@ import java.util.Date;
  *
  */
 public class Corrida {
+	private String id;
 	private Date dataRealizacao;
-	private Date horarioInicio;
-	private Date horarioTermino;
+	private Date start;
+	private Date end;
 	private String percurso;
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the dataRealizacao
@@ -33,31 +48,31 @@ public class Corrida {
 	/**
 	 * @return the horarioInicio
 	 */
-	public Date getHorarioInicio() {
-		return horarioInicio;
+	public Date getStart() {
+		return start;
 	}
 
 	/**
 	 * @param horarioInicio
 	 *            the horarioInicio to set
 	 */
-	public void setHorarioInicio(Date horarioInicio) {
-		this.horarioInicio = horarioInicio;
+	public void setStart(Date start) {
+		this.start = start;
 	}
 
 	/**
 	 * @return the horarioTermino
 	 */
-	public Date getHorarioTermino() {
-		return horarioTermino;
+	public Date getEnd() {
+		return end;
 	}
 
 	/**
 	 * @param horarioTermino
 	 *            the horarioTermino to set
 	 */
-	public void setHorarioTermino(Date horarioTermino) {
-		this.horarioTermino = horarioTermino;
+	public void setEnd(Date end) {
+		this.end = end;
 	}
 
 	/**

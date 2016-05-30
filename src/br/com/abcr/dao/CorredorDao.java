@@ -1,5 +1,6 @@
 package br.com.abcr.dao;
 
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -11,11 +12,15 @@ import java.util.List;
 
 import br.com.abcr.model.Corredor;
 
-public class AbcrDao {
+/**
+ * @author jmoraes
+ *
+ */
+public class CorredorDao {
 
 	private Connection connection;
 
-	public AbcrDao() {
+	public CorredorDao() {
 		this.connection = new ConnectionFactory().getConnection();
 	}
 

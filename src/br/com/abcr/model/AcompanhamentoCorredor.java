@@ -3,7 +3,7 @@
  */
 package br.com.abcr.model;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * @author jmoraes
@@ -11,7 +11,7 @@ import java.util.Date;
  */
 public class AcompanhamentoCorredor {
 	private String id;
-	private Date dataInsercao;
+	private Calendar dataInsercao;
 	private String colesterol;
 	private String triglicerideos;
 	private String glicose;
@@ -38,7 +38,7 @@ public class AcompanhamentoCorredor {
 	/**
 	 * @return the dataInsercao
 	 */
-	public Date getDataInsercao() {
+	public Calendar getDataInsercao() {
 		return dataInsercao;
 	}
 
@@ -46,7 +46,7 @@ public class AcompanhamentoCorredor {
 	 * @param dataInsercao
 	 *            the dataInsercao to set
 	 */
-	public void setDataInsercao(Date dataInsercao) {
+	public void setDataInsercao(Calendar dataInsercao) {
 		this.dataInsercao = dataInsercao;
 	}
 
