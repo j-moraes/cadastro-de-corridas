@@ -24,7 +24,8 @@ public class Corrida {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -88,6 +89,12 @@ public class Corrida {
 	 */
 	public void setPercurso(String percurso) {
 		this.percurso = percurso;
+	}
+
+	@Override
+	public String toString() {
+		return "id: " + this.getId() + ", Data De Realização: " + this.getDataRealizacao() + ", Horário de Início: "
+				+ this.getStart() + ", Horário de Encerramento: " + this.getEnd() + ", percurso: " + this.getPercurso();
 	}
 
 }

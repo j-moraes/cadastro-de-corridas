@@ -116,4 +116,8 @@ public class Corredor {
 		this.dataNascimento = data;
 	}
 
+	@Override
+	public String toString() {
+		return "Nome: " + this.getNome() + ", cpf: " + this.getCpf() + ", Data de Nascimento: " + this.getDataNascimento() + ", Sexo: " + this.getSexo() + ", telefone: " + this.getTelefone() + ", Endereço: " + this.getEndereco() + ", Contato conhecido: " + this.getPessoaContato(); 
+	}
 }

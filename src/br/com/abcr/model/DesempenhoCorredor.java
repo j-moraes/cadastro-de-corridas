@@ -91,4 +91,11 @@ public class DesempenhoCorredor {
 		this.corridaIncompleta = corridaIncompleta;
 	}
 
+	@Override
+	public String toString() {
+		return "IdCorrida: " + this.getIdCorrida() + ", Nome do Corredor: " + this.getNome() + ", Tempo de Chegada: "
+				+ this.getTempoChegada() + ", Completou a corrida: " + this.getCorridaCompleta()
+				+ ", Não completou o percurso: " + this.getCorridaIncompleta();
+	}
+
 }

@@ -53,12 +53,12 @@ public class CorridaDao {
 				Calendar data = Calendar.getInstance();
 				data.setTime(rs.getDate("dataRealizacao"));
 				corrida.setDataRealizacao(data);
-				Calendar data = Calendar.getInstance();
-				data.setTime(rs.getDate("start"));
-				corrida.setStart(data);
-				Calendar data = Calendar.getInstance();
-				data.setTime(rs.getDate("end"));
-				corrida.setEnd(data);
+				Calendar dataStart = Calendar.getInstance();
+				dataStart.setTime(rs.getDate("start"));
+				corrida.setStart(dataStart);
+				Calendar dataEnd = Calendar.getInstance();
+				dataEnd.setTime(rs.getDate("end"));
+				corrida.setEnd(dataEnd);
 				corrida.setPercurso(rs.getString("percurso"));
 				dadosCorrida.add(corrida);
 			}

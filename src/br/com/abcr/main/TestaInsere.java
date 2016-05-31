@@ -6,14 +6,17 @@ package br.com.abcr.main;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Scanner;
 
 import br.com.abcr.dao.AcompanhamentoCorredorDao;
 import br.com.abcr.dao.CorredorDao;
 import br.com.abcr.dao.CorridaDao;
+import br.com.abcr.dao.DesempenhoCorredorDao;
 import br.com.abcr.model.AcompanhamentoCorredor;
 import br.com.abcr.model.Corredor;
 import br.com.abcr.model.Corrida;
+import br.com.abcr.model.DesempenhoCorredor;
 
 /**
  * @author jmoraes
@@ -25,12 +28,17 @@ public class TestaInsere {
 	private static CorridaDao corridaDao;
 
 	private static AcompanhamentoCorredorDao acompanhamentoDao;
+
+	private static DesempenhoCorredorDao desempenhoDao;
+
 	private static Scanner pegaValor;
 	private static Corredor corredor;
 
 	private static AcompanhamentoCorredor acompanhamentoCorredor;
 
 	private static Corrida corrida;
+
+	private static DesempenhoCorredor desempenho;
 
 	/**
 	 * @param args
@@ -43,11 +51,15 @@ public class TestaInsere {
 
 		corrida = new Corrida();
 
+		desempenho = new DesempenhoCorredor();
+
 		abcrDao = new CorredorDao();
 
 		acompanhamentoDao = new AcompanhamentoCorredorDao();
 
 		corridaDao = new CorridaDao();
+
+		desempenhoDao = new DesempenhoCorredorDao();
 
 		int op = 0;
 
@@ -81,6 +93,15 @@ public class TestaInsere {
 				cadastroCorrida();
 
 				break;
+
+			case 4:
+
+				cadastroDesempenhoCorredor();
+
+				break;
+
+			case 5:
+				exibe();
 
 			default:
 				break;
@@ -243,6 +264,65 @@ public class TestaInsere {
 		corridaDao.adiciona(corrida);
 
 		System.out.println("Dados salvos com sucesso!");
+	}
+
+	public static void cadastroDesempenhoCorredor() throws ParseException {
+		// pega id
+		System.out.print("ID : ");
+		pegaValor = new Scanner(System.in);
+		desempenho.setIdCorrida(pegaValor.nextLine());
+
+		// pega Nome
+		System.out.print("Nome : ");
+
+		pegaValor = new Scanner(System.in);
+
+		desempenho.setNome(pegaValor.nextLine());
+
+		// Tempo de chegada
+		System.out.print("Tempo de chegada : ");
+		pegaValor = new Scanner(System.in);
+
+		new SimpleDateFormat("dd/MM/yyyy");
+		Calendar.getInstance();
+
+		Calendar cal = Calendar.getInstance();
+
+		desempenho.setTempoChegada(cal);
+
+		// corrida completa
+
+		System.out.print("corrida completa : ");
+		pegaValor = new Scanner(System.in);
+
+		desempenho.setCorridaCompleta(pegaValor.nextLine());
+
+		// corrida incompleta
+		System.out.print("Corrida completa : ");
+		pegaValor = new Scanner(pegaValor.nextLine());
+
+		desempenho.setCorridaCompleta(pegaValor.nextLine());
+
+		desempenhoDao.adiciona(desempenho);
+
+		System.out.println("Dados salvos com sucesso!");
+	}
+
+	public static void exibe() {
+		List<Corredor> corredores = abcrDao.getLista();
+
+		acompanhamentoDao.getLista();
+
+		corridaDao.getLista();
+
+		desempenhoDao.getLista();
+
+		for (Corredor corredor : corredores) {
+			System.out.println(corredor);
+			System.out.println(acompanhamentoCorredor);
+			System.out.println(corrida);
+			System.out.println(desempenho);
+		}
 	}
 
 }

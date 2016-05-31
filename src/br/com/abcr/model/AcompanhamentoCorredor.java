@@ -155,4 +155,13 @@ public class AcompanhamentoCorredor {
 		this.batimentosCardiacosRepouso = batimentosCardiacosRepouso;
 	}
 
+	@Override
+	public String toString() {
+		return "id: " + this.getId() + ", Data de Inserção: " + this.getDataInsercao() + ", colesterol: "
+				+ this.getColesterol() + ", triglicerídeos: " + this.getTriglicerideos() + ", glicose: "
+				+ this.getGlicose() + ", pressão arterial: " + this.getPressaoArterial() + ", altura: "
+				+ this.getAltura() + ", peso: " + this.getPeso() + ", Batimento Cardíacos em Repouso: "
+				+ this.getBatimentosCardiacosRepouso();
+	}
+
 }
